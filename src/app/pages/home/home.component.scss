@@ -1,0 +1,13 @@
+.banner {
+  width: 100%;
+  height: 400px;
+  display: block;
+  background-image: url(/assets/images/ecommerce-banner.jpg);
+  background-size: cover;
+}
+.product-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 20px 0;
+}
