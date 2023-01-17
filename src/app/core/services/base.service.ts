@@ -15,4 +15,8 @@ export class BaseService {
   post<t>(url: string, body: any): Observable<t> {
     return this.http.post<t>(this.apiUrl + url, body)
   }
+
+  get<t>(url: string, params?:any):Observable<t> {
+    return this.http.get<t>(this.apiUrl + url, {params})
+  }
 }

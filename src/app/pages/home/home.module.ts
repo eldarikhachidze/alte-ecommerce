@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import {ProductCardComponent} from "../../features/product-card/product-card.component";
+import {ProductCardModule} from "../../features/product-card/product-card.module";
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ProductCardComponent
   ],
   imports: [
     CommonModule,
+    ProductCardModule,
     HomeRoutingModule
   ]
 })

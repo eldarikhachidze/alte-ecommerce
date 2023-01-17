@@ -1,14 +1,14 @@
-<div class="d-flex card p-2">
+<div *ngIf="product" class="d-flex card p-2">
   <div [ngStyle]="{
-   'background-image': 'url(https://i.pinimg.com/originals/14/a2/84/14a2845cb45ec17ba77e226f65f221d5.jpg)'
+   'background-image': 'url(' + product.image +')'
   }" class="card-image" >
 
   </div>
   <div class="p-2">
-    <h3>Product Name</h3>
+    <h3>{{product.name}}</h3>
   </div>
   <div class="d-flex justify-content-between align-items-center p-2">
-    <div class="price">100$</div>
+    <div class="price">{{product.price | currency: 'USD': true}}</div>
     <div><div class="col-md-3 text-end">
       <button type="button" class="btn btn-outline-primary me-2" >Add to Cart</button>
     </div></div>
