@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../../../core/services";
+import {AuthService, CartService} from "../../../../core/services";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import {AuthService} from "../../../../core/services";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  cartCount$: Observable<number> = this.cartService.cartCount$
   get userIsAuthenticated() {
     return this.authService.token
   }
@@ -16,7 +18,8 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {

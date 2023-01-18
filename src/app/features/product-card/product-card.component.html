@@ -10,7 +10,7 @@
   <div class="d-flex justify-content-between align-items-center p-2">
     <div class="price">{{product.price | currency: 'USD': true}}</div>
     <div><div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2" >Add to Cart</button>
+      <button *appAuthAccess type="button" class="btn btn-outline-primary me-2" (click)="addToCart()" >Add to Cart</button>
     </div></div>
   </div>
 </div>
