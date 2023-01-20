@@ -4,3 +4,17 @@
 signout {
   cursor: pointer;
 }
+.cart {
+  position: relative;
+  text-decoration: none;
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #1a9fbc;
+    color: white;
+    padding: 0 5px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+  }
+}

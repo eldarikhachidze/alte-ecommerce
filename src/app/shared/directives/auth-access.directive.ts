@@ -1,11 +1,10 @@
-import {Directive, ElementRef, TemplateRef, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Directive, TemplateRef, ViewContainerRef} from '@angular/core';
 import {AuthService} from "../../core/services";
-import {Container} from "@angular/compiler/src/i18n/i18n_ast";
 
 @Directive({
   selector: '[appAuthAccess]'
 })
-export class AuthAccessDirective {
+export class AuthAccessDirective implements AfterViewInit{
 
   constructor(
     private authService:AuthService,
@@ -13,7 +12,7 @@ export class AuthAccessDirective {
     private container: ViewContainerRef,
   ) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     console.log(this.authService.token)
     if(!this.authService.token) {
       this.container.clear()
