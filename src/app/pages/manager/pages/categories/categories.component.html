@@ -1,0 +1,22 @@
+<div class="p-2 d-flex justify-content-end">
+  <button routerLink="/manager/categories/create" class="btn btn-primary">Add</button>
+</div>
+<div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Product</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of categories">
+    <th>{{item?.id}}</th>
+    <th>{{item?.name}}</th>
+    <th>
+      <button class="btn btn-danger" (click)="deleteItem(item.id)">Remove</button>
+    </th>
+  </tr>
+  </tbody>
+</table>
+</div>
