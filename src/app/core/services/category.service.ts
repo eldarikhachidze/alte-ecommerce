@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {BaseService} from "./base.service";
 import {Observable} from "rxjs";
 import {Category} from "../interfaces";
-import {chmod} from "fs";
 
 @Injectable({
   providedIn: 'root'
