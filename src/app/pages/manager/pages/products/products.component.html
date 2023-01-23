@@ -1,5 +1,5 @@
 <div class="p-2 d-flex justify-content-end">
-  <button routerLink="/manager/categories/create" class="btn btn-primary">Add</button>
+  <button routerLink="/manager/products/create" class="btn btn-primary">Add</button>
 </div>
 <div>
   <table class="table">
@@ -21,7 +21,7 @@
       <th>{{item?.price | currency: 'USD': true}}</th>
       <th>{{item?.category?.name}}</th>
       <th>
-        <button class="btn btn-secondary me-2" [routerLink]="['/manager/categories/edit', item.id]">Edit</button>
+        <button class="btn btn-secondary me-2" [routerLink]="['/manager/products/edit', item.id]">Edit</button>
         <button class="btn btn-danger" (click)="deleteItem(item.id)">Remove</button>
       </th>
     </tr>

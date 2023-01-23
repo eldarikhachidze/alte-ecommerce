@@ -10,7 +10,6 @@ import {of, switchMap} from "rxjs";
   styleUrls: ['./category-add-edit.component.scss']
 })
 export class CategoryAddEditComponent implements OnInit {
-
   form: FormGroup = new FormGroup({
     id: new FormControl(null),
     name: new FormControl('', Validators.required),
