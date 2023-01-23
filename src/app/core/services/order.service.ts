@@ -6,7 +6,10 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class OrderService extends BaseService{
+  getOrders(): Observable<any>{
+    return this.get('order');
+  }
   createOrder(): Observable<any> {
-    return this.post('order')
+    return this.post('order');
   }
 }

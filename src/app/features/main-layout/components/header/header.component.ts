@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService, CartService} from "../../../../core/services";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import {Observable} from "rxjs";
 })
 export class HeaderComponent implements OnInit {
   cartCount$: Observable<number> = this.cartService.cartCount$
+  searchInput: any;
   get userIsAuthenticated() {
     return this.authService.token
   }
@@ -19,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,5 +30,9 @@ export class HeaderComponent implements OnInit {
 
   signOut() {
     localStorage.clear();
+  }
+
+  search($event: any) {
+    this.router.navigate(['/products'], {queryParams: {search: $event}})
   }
 }
