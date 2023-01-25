@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService extends BaseService{
+export class OrderService extends BaseService {
   getOrders(): Observable<any>{
     return this.get('order');
   }

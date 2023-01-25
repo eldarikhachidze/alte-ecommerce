@@ -1,5 +1,4 @@
 import {User} from "./user";
-import {Data} from "@angular/router";
 
 export interface Order {
   id: number;
@@ -7,8 +6,8 @@ export interface Order {
   user:User;
   subTotal: number;
   pending: boolean;
-  createdAt: Data;
-  updateAt: Data;
-  deleteAt: Data;
+  createdAt: Date;
+  updateAt: Date;
+  deleteAt: Date;
 
 }
